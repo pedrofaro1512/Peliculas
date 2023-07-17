@@ -1,0 +1,13 @@
+.menu-top {
+    display: flex;
+
+    &__logo {
+        display: flex;
+        margin-right: 40px;
+
+        img {
+            width: 50px;
+            height: auto;
+        }
+    }
+}
