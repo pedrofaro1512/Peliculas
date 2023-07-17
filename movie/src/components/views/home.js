@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch";
 import { URL_API, API } from "../../utils/constans";
 import SliderMovies from "../SliderMovies/SliderMovies";
 import MovieList from "../MovieList/MovieList";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const newMovies = useFetch(
@@ -30,6 +31,7 @@ const Home = () => {
           />
         </Col>
       </Row>
+      <Footer />
     </>
   );
 };
