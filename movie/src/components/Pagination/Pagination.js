@@ -1,6 +1,9 @@
 import React from "react";
 import Pagination from "rc-pagination";
 
+//Importación de estilo
+import "./Pagination.scss";
+
 const PaginationMovies = (props) => {
   const { currentPage, totalItems, onChangePage } = props;
   return (
