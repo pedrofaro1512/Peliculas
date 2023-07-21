@@ -11,7 +11,7 @@ import Home from "./components/views/home";
 import Movie from "./components/views/movie";
 import NewMovies from "./components/views/newMovies";
 import Popular from "./components/views/popular";
-import Search from "antd/es/input/Search";
+import Search from "../src/components/views/search/search";
 
 function App() {
   const { Header, Content } = Layout;
