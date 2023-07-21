@@ -4,6 +4,7 @@ import { URL_API, API } from "../../utils/constans";
 import Loading from "../../components/Loading";
 import Footer from "../../components/Footer";
 import MovieCatalog from "../MovieCatalog/MovieCatalog";
+import Pagination from "../../components/Pagination";
 import axios from "axios";
 
 const NewMovies = () => {
@@ -22,9 +23,12 @@ const NewMovies = () => {
         console.error("Error fetching movies:", error);
       }
     };
-
     fetchMovies();
   }, [page]);
+
+  const onChangePage = (page) => {
+    setPage(page);
+  };
 
   return (
     <Row>
@@ -32,9 +36,18 @@ const NewMovies = () => {
         <h1 style={{ fontSize: 35, fontWeight: "bold" }}>Últimos estrenos</h1>
       </Col>
       {movieList.results ? (
-        <Col span="24">
-          <MovieCatalog movies={movieList} />
-        </Col>
+        <Row>
+          <Col span="24">
+            <MovieCatalog movies={movieList} />
+          </Col>
+          <Col span="24">
+            <Pagination
+              currentPage={movieList.page}
+              totalItems={movieList.total_results}
+              onChangePage={onChangePage}
+            />
+          </Col>
+        </Row>
       ) : (
         <Col span={24}>
           <Loading />
